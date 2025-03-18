@@ -19,6 +19,17 @@ final class BooksListViewController: UITableViewController {
     func setBooks(books: [Book]) {
         self.books = books
     }
+    
+    // MARK: - Navigation
+    private func goToSecondVC(withBook book: Book) {
+        guard let bookVC = storyboard?.instantiateViewController(identifier: "BookViewController") as? BookViewController else {
+            print("VC not initialised")
+            return
+        }
+        bookVC.book = book
+        self.present(bookVC, animated: true)
+        //navigationController?.pushViewController(bookVC, animated: true)
+    }
 }
 
 //MARK: - UITableViewDataSource
@@ -37,5 +48,9 @@ extension BooksListViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Books"
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        goToSecondVC(withBook: books[indexPath.row])
     }
 }

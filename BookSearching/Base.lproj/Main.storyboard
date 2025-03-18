@@ -107,8 +107,108 @@
                             <outlet property="delegate" destination="X6p-gi-2Vl" id="8uj-cH-bJs"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="zjg-AP-80w"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EsS-Cv-eWO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1864.885496183206" y="20.422535211267608"/>
+        </scene>
+        <!--Book View Controller-->
+        <scene sceneID="XfH-cm-III">
+            <objects>
+                <viewController storyboardIdentifier="BookViewController" id="cxz-2e-7c3" customClass="BookViewController" customModule="BookSearching" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ait-Sn-NAS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmP-A2-bgR">
+                                <rect key="frame" x="76" y="117" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3L-zk-jQv">
+                                <rect key="frame" x="20" y="466" width="35" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHr-1F-GFU">
+                                <rect key="frame" x="20" y="516.33333333333337" width="76.333333333333329" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZX-Uu-njT">
+                                <rect key="frame" x="107.33333333333331" y="516.66666666666663" width="42" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAQ-yg-fIl">
+                                <rect key="frame" x="127" y="691" width="139" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add to Favorite">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addToFavorite:" destination="cxz-2e-7c3" eventType="touchUpInside" id="vz1-bb-LVu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6z-YL-gH0">
+                                <rect key="frame" x="105" y="465.66666666666669" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vM5-xP-lH1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yHr-1F-GFU" firstAttribute="top" secondItem="P3L-zk-jQv" secondAttribute="bottom" constant="30" id="Cdt-eP-vK5"/>
+                            <constraint firstItem="dZX-Uu-njT" firstAttribute="leading" secondItem="D6z-YL-gH0" secondAttribute="leading" id="Iii-DI-ebF"/>
+                            <constraint firstItem="hmP-A2-bgR" firstAttribute="top" secondItem="vM5-xP-lH1" secondAttribute="top" constant="40" id="KbB-Ck-RuD"/>
+                            <constraint firstItem="hmP-A2-bgR" firstAttribute="centerX" secondItem="ait-Sn-NAS" secondAttribute="centerX" id="Pc3-JC-rXm"/>
+                            <constraint firstItem="D6z-YL-gH0" firstAttribute="centerY" secondItem="ait-Sn-NAS" secondAttribute="centerY" constant="50" id="Vp7-6j-yjZ"/>
+                            <constraint firstItem="D6z-YL-gH0" firstAttribute="leading" secondItem="P3L-zk-jQv" secondAttribute="trailing" constant="50" id="cFh-rZ-Sw8"/>
+                            <constraint firstItem="yHr-1F-GFU" firstAttribute="leading" secondItem="vM5-xP-lH1" secondAttribute="leading" constant="20" id="dS5-Ps-sg5"/>
+                            <constraint firstItem="dZX-Uu-njT" firstAttribute="leading" secondItem="yHr-1F-GFU" secondAttribute="trailing" constant="11" id="gFg-ep-SbQ"/>
+                            <constraint firstItem="P3L-zk-jQv" firstAttribute="centerY" secondItem="ait-Sn-NAS" secondAttribute="centerY" constant="50" id="qg2-R6-HOh"/>
+                            <constraint firstItem="P3L-zk-jQv" firstAttribute="leading" secondItem="vM5-xP-lH1" secondAttribute="leading" constant="20" id="znK-8a-Chh"/>
+                            <constraint firstItem="dZX-Uu-njT" firstAttribute="centerY" secondItem="yHr-1F-GFU" secondAttribute="centerY" id="zqD-yb-v5n"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Iii-DI-ebF"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="JTx-mK-INB"/>
+                    <connections>
+                        <outlet property="addToFavoriteButton" destination="NAQ-yg-fIl" id="upD-6f-Fpg"/>
+                        <outlet property="authorLabel" destination="dZX-Uu-njT" id="r4p-ON-1a8"/>
+                        <outlet property="bookCoverImageView" destination="hmP-A2-bgR" id="QYW-ZL-W1U"/>
+                        <outlet property="titleLabel" destination="D6z-YL-gH0" id="yGu-2d-6rD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Od0-Am-9fM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2953.4351145038167" y="19.718309859154932"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e0c-g2-ylC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gZ7-bz-gvC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uiH-xp-pyz">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="X6p-gi-2Vl" kind="relationship" relationship="rootViewController" id="ATf-5b-xEU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pnG-rw-pzY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="938.16793893129773" y="20.422535211267608"/>
         </scene>

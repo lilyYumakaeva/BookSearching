@@ -7,9 +7,10 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 final class BookTableViewCell: UITableViewCell {
-    private let networkManager = NetworkManager.shared
+    //private let networkManager = NetworkManager.shared
     private lazy var defaultCover =  UIImage(systemName: "text.book.closed")
     
     @IBOutlet weak var bookTitle: UILabel!
@@ -25,14 +26,12 @@ final class BookTableViewCell: UITableViewCell {
             bookCover.image = defaultCover
             return
         }
-        networkManager.getCover(from: bookCoverID) { [weak self] result in
-            switch result {
-            case let .success(Data):
-                self?.bookCover.image = UIImage(data: Data)
-            case let .failure(error):
-                self?.bookCover.image = self?.defaultCover
-                print(error)
-            }
+        do {
+            let url = try OpenLibraryRequests.coverImage(coverId: bookCoverID).getUrl()
+            bookCover.kf.setImage(with: url)
+        } catch {
+            print("Error while creating URL")
+            bookCover.image = defaultCover
         }
     }
 }

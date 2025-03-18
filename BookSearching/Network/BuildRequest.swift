@@ -18,6 +18,15 @@ protocol BuildRequest {
 extension BuildRequest {
     
     func asRequest() throws -> URLRequest {
+        let url = try getUrl()
+        var request: URLRequest = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        
+        return request
+        
+    }
+
+    func getUrl() throws -> URL {
         var components: URLComponents = URLComponents()
         components.scheme = scheme
         components.host = host
@@ -30,11 +39,8 @@ extension BuildRequest {
             throw NetworkError.invalidURL
         }
         print("url = \(url)")
-        var request: URLRequest = URLRequest(url: url)
-        request.httpMethod = method.rawValue
         
-        return request
-        
+        return url
     }
 }
 
