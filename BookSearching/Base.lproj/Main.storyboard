@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ECO-ih-DUb">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -46,13 +46,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="LuE-LY-TEo"/>
                     <connections>
                         <outlet property="queryTextField" destination="bU7-Gp-Qxv" id="VJp-hM-6Jx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3.8167938931297707" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="930.53435114503816" y="3.5211267605633805"/>
         </scene>
         <!--Books list-->
         <scene sceneID="xgX-ZE-W0a">
@@ -111,7 +112,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EsS-Cv-eWO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.885496183206" y="20.422535211267608"/>
+            <point key="canvasLocation" x="2791.6030534351144" y="20.422535211267608"/>
         </scene>
         <!--Book View Controller-->
         <scene sceneID="XfH-cm-III">
@@ -142,11 +143,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAQ-yg-fIl">
-                                <rect key="frame" x="127" y="691" width="139" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAQ-yg-fIl">
+                                <rect key="frame" x="111.66666666666669" y="691" width="170" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="ihp-ml-ka1"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add to Favorite">
+                                <buttonConfiguration key="configuration" style="filled" title="Remember book">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
@@ -160,18 +163,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book was remembered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyl-eS-sGO">
+                                <rect key="frame" x="105" y="650.66666666666663" width="183" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vM5-xP-lH1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yHr-1F-GFU" firstAttribute="top" secondItem="P3L-zk-jQv" secondAttribute="bottom" constant="30" id="Cdt-eP-vK5"/>
                             <constraint firstItem="dZX-Uu-njT" firstAttribute="leading" secondItem="D6z-YL-gH0" secondAttribute="leading" id="Iii-DI-ebF"/>
+                            <constraint firstItem="NAQ-yg-fIl" firstAttribute="top" secondItem="fyl-eS-sGO" secondAttribute="bottom" constant="20" id="KQs-GM-ks4"/>
                             <constraint firstItem="hmP-A2-bgR" firstAttribute="top" secondItem="vM5-xP-lH1" secondAttribute="top" constant="40" id="KbB-Ck-RuD"/>
                             <constraint firstItem="hmP-A2-bgR" firstAttribute="centerX" secondItem="ait-Sn-NAS" secondAttribute="centerX" id="Pc3-JC-rXm"/>
+                            <constraint firstItem="NAQ-yg-fIl" firstAttribute="centerX" secondItem="ait-Sn-NAS" secondAttribute="centerX" id="Uw7-DB-rD7"/>
                             <constraint firstItem="D6z-YL-gH0" firstAttribute="centerY" secondItem="ait-Sn-NAS" secondAttribute="centerY" constant="50" id="Vp7-6j-yjZ"/>
+                            <constraint firstItem="vM5-xP-lH1" firstAttribute="bottom" secondItem="NAQ-yg-fIl" secondAttribute="bottom" constant="92" id="aMH-VY-eHe"/>
                             <constraint firstItem="D6z-YL-gH0" firstAttribute="leading" secondItem="P3L-zk-jQv" secondAttribute="trailing" constant="50" id="cFh-rZ-Sw8"/>
+                            <constraint firstItem="NAQ-yg-fIl" firstAttribute="centerX" secondItem="hmP-A2-bgR" secondAttribute="centerX" id="cwo-ib-Ks0"/>
                             <constraint firstItem="yHr-1F-GFU" firstAttribute="leading" secondItem="vM5-xP-lH1" secondAttribute="leading" constant="20" id="dS5-Ps-sg5"/>
                             <constraint firstItem="dZX-Uu-njT" firstAttribute="leading" secondItem="yHr-1F-GFU" secondAttribute="trailing" constant="11" id="gFg-ep-SbQ"/>
+                            <constraint firstItem="fyl-eS-sGO" firstAttribute="centerX" secondItem="ait-Sn-NAS" secondAttribute="centerX" id="i43-5v-l8Z"/>
                             <constraint firstItem="P3L-zk-jQv" firstAttribute="centerY" secondItem="ait-Sn-NAS" secondAttribute="centerY" constant="50" id="qg2-R6-HOh"/>
                             <constraint firstItem="P3L-zk-jQv" firstAttribute="leading" secondItem="vM5-xP-lH1" secondAttribute="leading" constant="20" id="znK-8a-Chh"/>
                             <constraint firstItem="dZX-Uu-njT" firstAttribute="centerY" secondItem="yHr-1F-GFU" secondAttribute="centerY" id="zqD-yb-v5n"/>
@@ -187,12 +201,13 @@
                         <outlet property="addToFavoriteButton" destination="NAQ-yg-fIl" id="upD-6f-Fpg"/>
                         <outlet property="authorLabel" destination="dZX-Uu-njT" id="r4p-ON-1a8"/>
                         <outlet property="bookCoverImageView" destination="hmP-A2-bgR" id="QYW-ZL-W1U"/>
+                        <outlet property="bookIsLiked" destination="fyl-eS-sGO" id="ngh-YL-WPn"/>
                         <outlet property="titleLabel" destination="D6z-YL-gH0" id="yGu-2d-6rD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Od0-Am-9fM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2953.4351145038167" y="19.718309859154932"/>
+            <point key="canvasLocation" x="3880.1526717557249" y="19.718309859154932"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e0c-g2-ylC">
@@ -210,7 +225,106 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnG-rw-pzY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938.16793893129773" y="20.422535211267608"/>
+            <point key="canvasLocation" x="1864.885496183206" y="20.422535211267608"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="TPc-r3-214">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ECO-ih-DUb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yad-aT-mXg">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Ke7-Q3-G3v"/>
+                        <segue destination="rTW-Aa-IP1" kind="relationship" relationship="viewControllers" id="KK0-B4-BVC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kgu-fS-KlU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4" y="494"/>
+        </scene>
+        <!--Liked Books View Controller-->
+        <scene sceneID="QPB-Tw-Zir">
+            <objects>
+                <tableViewController storyboardIdentifier="LikedBooksViewController" id="rTW-Aa-IP1" customClass="LikedBooksViewController" customModule="BookSearching" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="B3z-bL-Gsk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LikedBookTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="likedBookCell" rowHeight="180" id="FAI-IV-Jbm" customClass="LikedBookTableViewCell" customModule="BookSearching" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="180"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FAI-IV-Jbm" id="Xxq-xM-Opo">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="180"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ne8-5F-V3t">
+                                            <rect key="frame" x="20.000000000000004" y="26" width="40.333333333333343" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSV-nF-DPd">
+                                            <rect key="frame" x="20" y="55" width="59" height="20"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TitleLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWR-6i-psy">
+                                            <rect key="frame" x="101.33333333333331" y="26" width="75" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AuthorLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xe1-Ml-Msc">
+                                            <rect key="frame" x="102" y="55" width="93" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEg-Qj-rwN">
+                                            <rect key="frame" x="20" y="93" width="152" height="33"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" title="Remove from list"/>
+                                            <connections>
+                                                <action selector="removeButtonDidTap:" destination="FAI-IV-Jbm" eventType="touchUpInside" id="vqo-ma-U1d"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ne8-5F-V3t" firstAttribute="top" secondItem="Xxq-xM-Opo" secondAttribute="topMargin" constant="15" id="3Mb-8e-eZ0"/>
+                                        <constraint firstItem="bWR-6i-psy" firstAttribute="top" secondItem="Xxq-xM-Opo" secondAttribute="topMargin" constant="15" id="HBP-Br-xPH"/>
+                                        <constraint firstItem="Xe1-Ml-Msc" firstAttribute="top" secondItem="bWR-6i-psy" secondAttribute="bottom" constant="8" symbolic="YES" id="KqV-St-r47"/>
+                                        <constraint firstItem="ne8-5F-V3t" firstAttribute="leading" secondItem="Xxq-xM-Opo" secondAttribute="leadingMargin" id="Wp2-3J-9QB"/>
+                                        <constraint firstItem="Xe1-Ml-Msc" firstAttribute="leading" secondItem="BSV-nF-DPd" secondAttribute="trailing" constant="23" id="Z4k-Oa-jKg"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="rEg-Qj-rwN" secondAttribute="bottom" constant="10" id="h6i-81-cZe"/>
+                                        <constraint firstItem="BSV-nF-DPd" firstAttribute="leading" secondItem="Xxq-xM-Opo" secondAttribute="leadingMargin" id="hYi-pz-oOe"/>
+                                        <constraint firstItem="BSV-nF-DPd" firstAttribute="top" secondItem="ne8-5F-V3t" secondAttribute="bottom" constant="8" symbolic="YES" id="ngf-vu-jNh"/>
+                                        <constraint firstItem="rEg-Qj-rwN" firstAttribute="leading" secondItem="Xxq-xM-Opo" secondAttribute="leadingMargin" id="xc4-Za-sRM"/>
+                                        <constraint firstItem="bWR-6i-psy" firstAttribute="leading" secondItem="ne8-5F-V3t" secondAttribute="trailing" constant="41" id="zZb-oB-jrx"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="authorLabel" destination="Xe1-Ml-Msc" id="M83-qc-9uW"/>
+                                    <outlet property="removeButton" destination="rEg-Qj-rwN" id="sLe-T5-0f5"/>
+                                    <outlet property="titleLabel" destination="bWR-6i-psy" id="xsd-Wl-hs2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rTW-Aa-IP1" id="7R6-g2-nJb"/>
+                            <outlet property="delegate" destination="rTW-Aa-IP1" id="5k9-oW-4hG"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="NB9-fx-Vvv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dTK-ob-o0w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930.53435114503816" y="892.95774647887333"/>
         </scene>
     </scenes>
     <resources>

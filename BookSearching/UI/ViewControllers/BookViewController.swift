@@ -12,6 +12,7 @@ final class BookViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var addToFavoriteButton: UIButton!
+    @IBOutlet weak var bookIsLiked: UILabel!
     var book: Book!
     
     private let coreDataManager = CoreDataManager()
@@ -42,9 +43,11 @@ final class BookViewController: UIViewController {
         
         let isLiked = coreDataManager.isLiked(book)
         if isLiked {
-            addToFavoriteButton.setTitle("Remove from favorites", for: .normal)
+            bookIsLiked.isHidden = false
+            addToFavoriteButton.isHidden = true//.setTitle("Remove from favorites", for: .normal)
         } else {
-            addToFavoriteButton.setTitle("Add to favorites", for: .normal)
+            bookIsLiked.isHidden = true
+            addToFavoriteButton.setTitle("Remember book", for: .normal)
         }
     }
     

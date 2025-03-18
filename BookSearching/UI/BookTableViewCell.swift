@@ -10,7 +10,6 @@ import UIKit
 import Kingfisher
 
 final class BookTableViewCell: UITableViewCell {
-    //private let networkManager = NetworkManager.shared
     private lazy var defaultCover =  UIImage(systemName: "text.book.closed")
     
     @IBOutlet weak var bookTitle: UILabel!

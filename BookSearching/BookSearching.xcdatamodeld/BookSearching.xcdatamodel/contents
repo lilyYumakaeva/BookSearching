@@ -3,6 +3,7 @@
     <entity name="BookDB" representedClassName="BookDB" syncable="YES">
         <attribute name="author_key" optional="YES" attributeType="String"/>
         <attribute name="author_name" optional="YES" attributeType="String"/>
+        <attribute name="cover_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="work_key" optional="YES" attributeType="String"/>
     </entity>
