@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Moya
 
 final class SearchViewController: UIViewController {
     private let networkManager = NetworkManager.shared
